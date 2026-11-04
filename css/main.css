@@ -1,0 +1,81 @@
+:root {
+    --primary-color: #344335;
+    --bg: #000000;
+    --font-size: 11px;
+    --font-color: #f4ebeb;
+    --bg-div-color: #1c1d1c;
+    --button-color: #0a0a0a;
+    --border-thickness: 3px;
+    --background: url('../assets/bg.jpg') no-repeat center center fixed;
+    --background-size: cover;
+}
+
+html, body {
+    background-color: var(--bg);
+    background: var(--background);
+    background-size: var(--background-size);
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--font-color);
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    gap: 15px; 
+  
+}
+
+
+.side-content {
+     width: 199px;
+    height: 299px;
+    padding: 10px;
+    border: var(--border-thickness) solid var(--primary-color);
+    background-color: var(--bg-div-color);
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; 
+} /* side content can stay like this since it's ONLY for buttons. */
+
+
+.main-content {
+    width: 399px;
+    height: 499px;
+    padding: 10px;
+    border: var(--border-thickness) solid var(--primary-color);
+    overflow-y: auto;
+    background-color: var(--bg-div-color);
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; 
+}
+
+
+.decoration-img {
+      position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    top: var(--top, 50%);
+    left: var(--left, 50%);
+    width: var(--width, auto);
+    height: var(--height, auto);
+}
+
+
+.buttonsd {
+    width:180px;
+    height:40px;
+    background-color: var(--button-color);
+    color: var(--font-color);
+     margin-bottom: 3px;
+
+}
