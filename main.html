@@ -10,29 +10,52 @@
     <script src="js/symbol.js"></script>
     <script src="js/titlescroll.js"></script>
     <script src="js/cross.js"></script>
-    <script src="js/saw.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/calendar.js" defer></script>
     
     <link rel="icon" type="image/x-icon" href="assets/ico.png">
 </head>
 
 <body>
     <div class="wrapper">
-    <img src="assets/overlay.jpg"
+        
+     <img src="assets/overlay.jpg"
      class="overlay overlay-1"
      alt="Overlay Image">
 
-    <img src="assets/overlay2.jpg"
+     <img src="assets/overlay2.jpg"
      class="overlay overlay-2"
      alt="Overlay Image">
 
+     <img src="assets/overlay3.jpg"
+     class="overlay overlay-3"
+     alt="Overlay Image">
+
+
          <!-- side content -->
-         <aside class="side-content">
-            <button class="buttonsd">test button1</button>
-            <button class="buttonsd">test button2</button>
-            <button class="buttonsd">test button3</button>
-            <button class="buttonsd">test button4</button>
-            
-        </aside>
+         <div class="sidebar-column">
+            <aside class="side-content">
+                <a href="test.html"><button class="buttonsd">test page</button></a>
+            </aside>
+
+            <section class="calendar" aria-label="Calendar">
+                <div class="calendar-header">
+                    <button class="calendar-nav" id="calendar-prev" type="button" aria-label="Previous month">&lt;</button>
+                    <h2 id="calendar-month" aria-live="polite"></h2>
+                    <button class="calendar-nav" id="calendar-next" type="button" aria-label="Next month">&gt;</button>
+                </div>
+                <div class="calendar-grid calendar-weekdays" aria-hidden="true">
+                    <span>Sun</span>
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                </div>
+                <div class="calendar-grid" id="calendar-days" role="grid" aria-label="Days of the month"></div>
+            </section>
+        </div>
 
       
        <!-- main content -->
@@ -51,9 +74,10 @@
      class="decoration-img"
      style="--top: 98%; --left: 90%; --height: 55vh;" alt="">
 
+    
      <img id="cross" src="assets/cross.png"
      class="decoration-img"
-     style="--top: 8%; --left: 18%; --height: 50vh;" alt="">
+     style="--top: 8%; --left: 18%; --height: 50vh;transform: scale(1.15);" alt="">
 
     </div>
 
