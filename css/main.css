@@ -272,6 +272,7 @@ body {
     }
 }
 
+
 ::view-transition-old(root) {
     animation: 1.3s ease-out both slide-out;
 }
@@ -279,4 +280,18 @@ body {
 ::view-transition-new(root) {
     animation: 0.9s ease-in both slide-in;
 }
+
+.emoji {
+    width:22px;
+    height:22px;
+    position:sticky;
+}
+
+hr {
+    width: 28vh;
+    height: 16px;
+    border: none;
+    background: url("../assets/ico.png") center / contain repeat-x ;
+}
+
 
