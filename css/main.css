@@ -8,7 +8,7 @@
     --button-color: #0a0a0a42;
     --border-thickness: 3px;
     --border-radius: 4px;
-    --background: url('../assets/bg.jpg') no-repeat center center fixed;
+    --background: url('/assets/bg.jpg') no-repeat center center fixed;
     --background-size: cover;
 }
 
@@ -92,11 +92,17 @@ body {
 .buttonsd {
     width: 180px;
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--button-color);
     border: 1px solid var(--primary-color);
-    radius: var(--border-radius);
+    border-radius: var(--border-radius);
     color: var(--font-color);
     margin-bottom: 3px;
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
 
         backdrop-filter: blur(var(--bg-blur));
     -webkit-backdrop-filter: blur(var(--bg-blur)); /* Safari support */
@@ -211,7 +217,7 @@ body {
 
 .overlay-4 {
     z-index: 1;
-    opacity: 0.06;
+    opacity: 0.1;
     mix-blend-mode: color-burn;
     filter: hue-rotate(13deg);
     transform: scale(2.15) rotate(-82deg);
@@ -291,7 +297,7 @@ hr {
     width: 28vh;
     height: 16px;
     border: none;
-    background: url("../assets/ico.png") center / contain repeat-x ;
+    background: url("/assets/ico.png") center / contain repeat-x ;
 }
 
 

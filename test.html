@@ -11,13 +11,14 @@
                 background-size: cover !important;
             }
         </style>
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/symbol.js"></script>
-        <script src="js/titlescroll.js"></script>
-        <script src="js/cross.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/about.js" defer></script>
-        <link rel="icon" type="image/x-icon" href="assets/ico.png">
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/js/symbol.js"></script>
+        <script src="/js/titlescroll.js"></script>
+        <script src="/js/cross.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="js/navigation.js" defer></script>
+        <script src="/js/about.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="/assets/ico.png">
     </head>
     <body>
         <div class="wrapper">
@@ -25,9 +26,7 @@
             <img src="/assets/static.gif" class="overlay overlay-5" alt="Overlay Image">
             
             <!-- Side content -->
-            <aside class="side-content">
-                <a href="./main.html"><button class="buttonsd">Main Page</button></a>
-            </aside>
+            <nav class="side-content" data-site-navigation aria-label="Main navigation"></nav>
             <main class="main-content">
                 <h1>About Me</h1>
                 <div id="about-content"></div>

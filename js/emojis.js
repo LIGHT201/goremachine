@@ -1,7 +1,7 @@
 (() => {
     const scriptUrl = document.currentScript.src;
-    const manifestUrl = new URL('../assets/emojis/manifest.json', scriptUrl);
-    const emojiDirectoryUrl = new URL('./', manifestUrl);
+    const manifestUrl = new URL('/assets/emojis/manifest.json', scriptUrl);
+    const emojiDirectoryUrl = new URL('/assets/emojis/', scriptUrl);
     const excludedSelector = 'script, style, textarea, title, option, .emoji';
     const shortcodePattern = /:([a-z0-9_-]+):/gi;
 

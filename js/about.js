@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const response = await fetch('chp/about.txt');
+        const response = await fetch('/chp/about.txt');
         if (!response.ok) {
             throw new Error(`Failed to load about.txt: ${response.status}`);
         }

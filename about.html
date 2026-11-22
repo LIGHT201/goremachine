@@ -11,14 +11,13 @@
                 background-size: cover !important;
             }
         </style>
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/symbol.js"></script>
-        <script src="js/titlescroll.js"></script>
-        <script src="js/cross.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/emojis.js" defer></script>
-        <script src="js/about.js" defer></script>
-        <link rel="icon" type="image/x-icon" href="assets/ico.png">
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="/js/titlescroll.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="js/navigation.js" defer></script>
+        <script src="/js/emojis.js" defer></script>
+        <script src="/js/about.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="/assets/ico.png">
     </head>
     <body class="about-page">
         <div class="wrapper about-wrapper">
@@ -26,9 +25,7 @@
             <img src="/assets/static.gif" class="overlay overlay-5" alt="Overlay Image">
             
             <!-- Side content -->
-            <aside class="side-content">
-                <a href="./main.html"><button class="buttonsd">Main Page</button></a>
-            </aside>
+            <nav class="side-content" data-site-navigation aria-label="Main navigation"></nav>
             <main class="main-content about-main">
                 <div id="about-content"></div>
             </main>
@@ -38,6 +35,13 @@
                 src="/assets/webcorner.png"
                 class="decoration-img"
                 style="--top: 22%; --left: 12%; --height: 94vh;mix-blend-mode:hard-light;"
+                alt=""
+            >
+
+             <img
+                src="/assets/cybersig.webp"
+                class="decoration-img"
+                style="transform:rotate(-180deg);--top: 3%; --left: 55%; --height: 94vh;mix-blend-mode:luminosity;"
                 alt=""
             >
         </div>
