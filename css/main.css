@@ -1,6 +1,7 @@
 :root {
     --primary-color: #2c383344;
     --bg: #121111;
+    --summary-bg: rgba(20, 20, 20, 0.281);
     --font-size: 11px;
     --font-color: #f4ebeb;
     --bg-div-color: #1c1b1b80;
@@ -12,114 +13,103 @@
     --background-size: cover;
 }
 
+/* Base */
 ::selection {
-    background: #050505; /* dark background behind selected text */
-    color: #414242; /* light text color for selected text */
+    background: #050505;
+    color: #414242;
 }
 
 html,
 body {
-    background-color: var(--bg);
-    background: var(--background);
-    background-size: var(--background-size);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: var(--font-color);
     height: 100%;
     margin: 0;
     overflow: hidden;
+    background-color: var(--bg);
+    background: var(--background);
+    background-size: var(--background-size);
+    color: var(--font-color);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* Shared page layout */
 .wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    align-items: center;
-    gap: 15px;
 }
 
 .sidebar-column {
-    width: 199px;
     display: flex;
+    flex: 0 0 199px;
     flex-direction: column;
     gap: 12px;
-    flex: 0 0 199px;
+    width: 199px;
+}
+
+.side-content,
+.main-content {
+    box-sizing: border-box;
+    border: var(--border-thickness) solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-div-color);
+    backdrop-filter: blur(var(--bg-blur));
+    -webkit-backdrop-filter: blur(var(--bg-blur));
 }
 
 .side-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 199px;
     height: 299px;
     padding: 10px;
-    border: var(--border-thickness) solid var(--primary-color);
-    border-radius: var(--border-radius);
-    background-color: var(--bg-div-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    backdrop-filter: blur(var(--bg-blur));
-    -webkit-backdrop-filter: blur(var(--bg-blur)); /* Safari support */
-} /* side content can stay like this since it's ONLY for buttons. */
+}
 
 .main-content {
+    align-items: center;
+    justify-content: center;
     width: 399px;
     height: 499px;
     padding: 10px;
-    border: var(--border-thickness) solid var(--primary-color);
-    border-radius: var(--border-radius);
     overflow-y: auto;
-    background-color: var(--bg-div-color);
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-
-    backdrop-filter: blur(var(--bg-blur));
-    -webkit-backdrop-filter: blur(var(--bg-blur)); /* Safari support */
 }
 
-.decoration-img {
-    position: absolute;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    top: var(--top, 50%);
-    left: var(--left, 50%);
-    width: var(--width, auto);
-    height: var(--height, auto);
-}
-
+/* Navigation */
 .buttonsd {
-    width: 180px;
-    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--button-color);
-    border: 1px solid var(--primary-color);
-    border-radius: var(--border-radius);
-    color: var(--font-color);
+    width: 180px;
+    height: 40px;
     margin-bottom: 3px;
     box-sizing: border-box;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background-color: var(--button-color);
+    color: var(--font-color);
     text-decoration: none;
     cursor: pointer;
-
-        backdrop-filter: blur(var(--bg-blur));
-    -webkit-backdrop-filter: blur(var(--bg-blur)); /* Safari support */
-
-
+    backdrop-filter: blur(var(--bg-blur));
+    -webkit-backdrop-filter: blur(var(--bg-blur));
 }
 
+/* Calendar */
 .calendar {
     width: 100%;
     margin-top: 0;
     padding: 8px;
-    border: 1px solid var(--bg-div-color);
-    background-color: var(--bg-div-color);
     box-sizing: border-box;
+    border: 1px solid var(--bg-div-color);
     border-radius: var(--border-radius);
+    background-color: var(--bg-div-color);
     backdrop-filter: blur(var(--bg-blur));
-    -webkit-backdrop-filter: blur(var(--bg-blur)); /* Safari support */
+    -webkit-backdrop-filter: blur(var(--bg-blur));
 }
 
 .calendar-header {
@@ -181,7 +171,18 @@ body {
 .calendar-day.is-outside-month {
     color: #777;
 }
-/* Awesome fucking section for overlays holy molyyy!! (im gonna shoot myself) */
+
+/* Decorative images and overlays */
+.decoration-img {
+    position: absolute;
+    top: var(--top, 50%);
+    left: var(--left, 50%);
+    width: var(--width, auto);
+    height: var(--height, auto);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
 .overlay {
     position: absolute;
     inset: 0;
@@ -195,7 +196,6 @@ body {
     z-index: 999;
     opacity: 0.07;
     mix-blend-mode: exclusion;
-    /* optional slight enlargement that still respects zoom */
     transform: scale(1.15);
 }
 
@@ -222,21 +222,68 @@ body {
     filter: hue-rotate(13deg);
     transform: scale(2.15) rotate(-82deg);
 }
-
+.static {
+     z-index: 1;
+    opacity: 0.03;
+    mix-blend-mode: soft-light;
+    filter: hue-rotate(234deg);
+    transform: scale(2.15) rotate(2deg);
+} /* This is also a overlay for the static*/
 
 .overlay-5 {
     z-index: 1;
-    opacity: 0.03;
-    mix-blend-mode:soft-light;
-    filter: hue-rotate(234deg);
+    opacity: 0.09;
+    mix-blend-mode:overlay;
     transform: scale(2.15) rotate(2deg);
 }
 
 
-#saw {
-    animation: spin-saw var(--spin,auto) linear infinite;
+.overlay-6 {
+    z-index: 1;
+    opacity: 0.07;
+    mix-blend-mode:difference;
+    transform: scale(2.15) rotate(-8deg);
 }
 
+#saw {
+    animation: spin-saw var(--spin, auto) linear infinite;
+}
+
+/* Details and icons */
+summary h2 {
+    display: inline;
+}
+
+summary .emoji {
+    width: 30px;
+    height: 30px;
+    
+}
+
+details {
+    background-color: var(--summary-bg);
+    border-radius: var(--border-radius);
+    padding: 2px 9px;
+
+    backdrop-filter: blur(var(--bg-blur));
+    -webkit-backdrop-filter: blur(var(--bg-blur));
+}
+
+
+.emoji {
+    position: sticky;
+    width: 22px;
+    height: 22px;
+}
+
+hr {
+    width: 28vh;
+    height: 16px;
+    border: none;
+    background: url('/assets/ico.png') center / contain repeat-x;
+}
+
+/* Animations */
 @keyframes spin-saw {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -245,11 +292,8 @@ body {
     to {
         transform: translate(-50%, -50%) rotate(-360deg);
     }
-} /* We make it spin also DONT MOVE WHEN ZOOMING */
+}
 
-/* Page transition stuff which is pretty cool, idk if i wanna keep it or add more to it
-   Im indesicisve <-- can't spell
- */
 @view-transition {
     navigation: auto;
 }
@@ -266,18 +310,17 @@ body {
 
 @keyframes slide-in {
     0% {
-        transform: skewX(-18deg) translate(0px, 30px) skewY(28deg) scale(2, 3);
+        transform: skewX(-18deg) translate(0, 30px) skewY(28deg) scale(2, 3);
         filter: saturate(2) hue-rotate(271deg);
         opacity: 0;
     }
 
     100% {
-        transform: skewX(0deg) skewY(0deg) translate(0px, 0px) scale(1);
-        filter: saturate(1) hue-rotate(0deg);
+        transform: skewX(0) skewY(0) translate(0, 0) scale(1);
+        filter: saturate(1) hue-rotate(0);
         opacity: 1;
     }
 }
-
 
 ::view-transition-old(root) {
     animation: 1.3s ease-out both slide-out;
@@ -286,18 +329,3 @@ body {
 ::view-transition-new(root) {
     animation: 0.9s ease-in both slide-in;
 }
-
-.emoji {
-    width:22px;
-    height:22px;
-    position:sticky;
-}
-
-hr {
-    width: 28vh;
-    height: 16px;
-    border: none;
-    background: url("/assets/ico.png") center / contain repeat-x ;
-}
-
-
