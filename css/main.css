@@ -82,11 +82,18 @@ body {
 
 .footer-credit {
     position: absolute;
-    top: 84%;
-    left: 50%;
+    right: 0;
+    bottom: 8px;
+    left: 0;
     margin: 0;
-    transform: translate(-50%, -50%);
     font-size: 9px;
+    line-height: 1.35;
+    text-align: center;
+    z-index: 2;
+}
+
+.footer-credit p {
+    margin: 0;
 }
 
 .guestbook-frame {
@@ -481,7 +488,9 @@ hr {
     .footer-credit {
         position: relative;
         left: auto;
+        right: auto;
         top: auto;
+        bottom: auto;
         width: 100%;
         max-width: 399px;
         margin: 0;
