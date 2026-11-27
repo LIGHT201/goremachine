@@ -2,24 +2,21 @@
 <h1>Hello :bksilly:</h1>
 
 <p>
-    It is I,  Light!, and I am the chad (chud) who made this epic website
-    revamped cuz im a awesome frigging chad (chud)!!
+    Hi, I'm Light, the person behind GOREMACHINE. I revamped this site
+    because building strange little websites is fun.
 </p>
-<h2> Stuff I like :catface:</h2>
+
+<h2>Stuff I like :catface:</h2>
 
 <p>
-I mainly like playing Minecraft, Roblox,:gmod:,
-and whatever games that feel cool to me and
-CAN afford. As for games I truly like, it'll
-probably be Gmod and Minecraft, mainly
-modded Minecraft is hella fun to play. I like
-horror movies (shock movies), coding/programming,
-and also drawing silly things. :bkdance:
-<p>
+    I mainly like playing Minecraft, Roblox :gmod:, and whatever other games
+    catch my interest. I especially enjoy GMod and modded Minecraft. I also
+    like horror movies, coding, programming, and drawing silly things.
+    :bkdance:
+</p>
 
 <h2>Where to find me?</h2>
 
 <p>
- You can see me on disord at traveller4634. 
- I do have other contacts but they're mainly private (dont know why im bringing this up lol)
+    You can find me on Discord at <strong>traveller4634</strong>.
 </p>
