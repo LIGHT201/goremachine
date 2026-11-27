@@ -1,15 +1,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.addEventListener('selectionchange', () => {
-        const selectedText = window.getSelection().toString();
-    });
-
     const trailContainer = document.createElement('div');
     trailContainer.style.cssText =
         'position:fixed;top:0;left:0;pointer-events:none;z-index:9999;width:100%;height:100%;overflow:hidden;';
     document.body.appendChild(trailContainer);
 
+    let lastParticleAt = 0;
+
     window.addEventListener('mousemove', (e) => {
+        const now = performance.now();
+        if (now - lastParticleAt < 32) {
+            return;
+        }
+        lastParticleAt = now;
+
         const particle = document.createElement('span');
         particle.textContent = '†';
         particle.style.cssText = `
