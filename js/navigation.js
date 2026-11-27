@@ -1,21 +1,26 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const navigation = document.querySelector('[data-site-navigation]');
-    if (!navigation) return;
+    if (!navigation) {
+        return;
+    }
 
-    fetch(new URL('base.html', document.baseURI))
-        .then(function (response) {
+    fetch(new URL('/base.html', document.baseURI))
+        .then((response) => {
             if (!response.ok) {
                 throw new Error(`Failed to load navigation: ${response.status}`);
             }
             return response.text();
         })
-        .then(function (html) {
+        .then((html) => {
             navigation.innerHTML = html;
-            const currentPage = new URL(window.location.href).pathname
+            let currentPage = new URL(window.location.href).pathname
                 .replace(/\/+$/, '')
-                .toLowerCase() || '/index.html';
+                .toLowerCase();
+            if (!currentPage) {
+                currentPage = '/index.html';
+            }
 
-            navigation.querySelectorAll('a[href]').forEach(function (link) {
+            navigation.querySelectorAll('a[href]').forEach((link) => {
                 const linkPage = new URL(link.href, window.location.href).pathname
                     .replace(/\/+$/, '')
                     .toLowerCase();
@@ -25,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         })
-        .catch(function (error) {
+        .catch((error) => {
             console.error('Unable to load site navigation.', error);
         });
 });
