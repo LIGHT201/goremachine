@@ -96,6 +96,22 @@ body {
     margin: 0;
 }
 
+.welcome-layout {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 2;
+}
+
+.welcome-layout p {
+    margin: 0;
+}
+
+.welcome-layout #symbol {
+    width: auto;
+    height: 210px;
+}
+
 .guestbook-frame {
     width: 600px;
     height: 600px;
@@ -119,6 +135,11 @@ body {
     cursor: pointer;
     backdrop-filter: blur(var(--bg-blur));
     -webkit-backdrop-filter: blur(var(--bg-blur));
+}
+
+.buttonsd:hover,
+.buttonsd:focus-visible {
+    background-color: var(--primary-color);
 }
 
 /* Calendar */
@@ -245,17 +266,17 @@ body {
     transform: scale(2.15) rotate(-82deg);
 }
 .static {
-     z-index: 1;
+    z-index: 1;
     opacity: 0.03;
     mix-blend-mode: soft-light;
     filter: hue-rotate(234deg);
     transform: scale(2.15) rotate(2deg);
-} /* This is also a overlay for the static*/
+}
 
 .overlay-5 {
     z-index: 1;
     opacity: 0.09;
-    mix-blend-mode:overlay;
+    mix-blend-mode: overlay;
     transform: scale(2.15) rotate(2deg);
 }
 
@@ -263,7 +284,7 @@ body {
 .overlay-6 {
     z-index: 1;
     opacity: 0.07;
-    mix-blend-mode:difference;
+    mix-blend-mode: difference;
     transform: scale(2.15) rotate(-8deg);
 }
 
@@ -276,10 +297,13 @@ summary h2 {
     display: inline;
 }
 
+summary time {
+    font-size: 10px;
+}
+
 summary .emoji {
     width: 30px;
     height: 30px;
-    
 }
 
 details {
@@ -498,10 +522,6 @@ hr {
         transform: none;
         text-align: center;
         font-size: 8px;
-    }
-
-    .guestbook-frame {
-        border: 0;
     }
 
     .guestbook-frame {
