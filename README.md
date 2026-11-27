@@ -1,6 +1,5 @@
-Website I'm currently revamping cause it's fun to ;)
+Website I'm currently revamping because it's fun :)
 
-Feel free to contribute if you wish to
+Feel free to contribute if you want.
 
-
-discord: traveller4634
+Discord: `traveller4634`
