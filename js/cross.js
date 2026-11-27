@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const cross = document.getElementById('cross');
     if (!cross) return;
 
-    let crossPosition = -40; // starting position in vh
-    const targetPosition = 48; // final position in vh
+    let crossPosition = -40;
+    const targetPosition = 48;
     const easingFactor = 0.02;
 
     function updateCrossPosition() {
