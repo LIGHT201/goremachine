@@ -32,7 +32,6 @@
 }
 
 .site-box > a > span::after {
-  filter: blur(0) !important;
   content: "Visit me!!" !important;
   font-size: 14px !important;
   color: #d8dbd7;
@@ -40,7 +39,6 @@
 }
 
 .site-box:hover > a > span::after {
-   filter: blur(2) !important;
   content: "WELCOME!" !important;
 }
 
